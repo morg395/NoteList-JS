@@ -1,0 +1,552 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    letter-spacing: 0.07em;
+}
+
+h1 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0px 20px 0px 20px;
+    
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+}
+
+.notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notesTxt {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -ms-align-items: center;
+    align-items: center;
+    
+    margin-bottom: 50px;
+}
+
+.notes__title {
+    padding-top: 40px;
+
+    background: linear-gradient(151.82deg, #DC50FF -8.12%, #DD3FA6 58.44%, #DB2F2F 105.99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    margin-bottom: 20px;
+}
+
+.line {
+    width: 700px;
+    height: 2px;
+    
+    background: linear-gradient(151.82deg, #DC50FF -8.12%, #DD3FA6 58.44%, #DB2F2F 105.99%);
+}
+
+.notesMain {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+.newNotes {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+}
+
+.message {
+    width: 300px;
+    height: 50px;
+    
+    padding-left: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0D0D0D;
+    
+    background-color: #d7d7d7;
+    
+    border-radius: 100px 0px 0px 100px;
+}
+
+:focus::-webkit-input-placeholder {
+    color: #d8d8d8;
+}
+
+:focus::-moz-placeholder {
+    color: #d8d8d8;
+}
+
+:focus:-moz-placeholder {
+    color: #d8d8d8;
+}
+
+:focus:-ms-input-placeholder {
+    color: #d8d8d8;
+}
+
+.message::placeholder {
+    color: #AEAEAE;
+    
+    transition: .2s;
+}
+
+.createNewNote {
+    width: 150px;
+    
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    
+    background: linear-gradient(151.82deg, #DC50FF -8.12%, #DD3FA6 58.44%, #DB2F2F 105.99%);
+    
+    border-radius: 0px 100px 100px 0px;
+    margin-right: 30px;
+
+    transition: .2s;
+}
+
+.createNewNote:hover {
+    background-position: 150px;
+}
+
+.createNewNote:active {
+    opacity: 0.6;
+}
+
+.settingsNotes {
+    height: 50px;
+    background-color: transparent;
+
+    transition: all .3s ease;
+}
+
+.settingsNotes:hover {
+    animation: settingsButtonAnimation 10s infinite ease;
+}
+
+.settingsNotes:active {
+    opacity: 0.6;
+}
+
+.notesNav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+.removeAllNotes {
+    width: 180px;
+    height: 48px;
+
+    font-size: 16px;
+    color: #fff;
+    background-color: rgb(255, 21, 13);
+
+    border-radius: 100px;
+
+    transition: all .3s ease;
+}
+
+.removeAllNotes:hover {
+    animation: deleteAllButtonAnimation 0.9s infinite ease;
+}
+
+.removeAllNotes:active {
+    background-color: black;
+    
+    animation: none;
+}
+
+.notesListItem-change {
+    display: flex;
+    align-items: center;
+}
+
+.notesWrapper {
+    width: 700px;
+
+    padding: 40px 80px 40px 80px;
+    background: linear-gradient(151.82deg, #DC50FF -8.12%, #DD3FA6 58.44%, #DB2F2F 105.99%);
+    border-radius: 50px;
+
+    margin-bottom: 50px;
+}
+
+.notesList {
+    display: block;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    
+    margin-bottom: 35px;
+}
+
+.notesListItemWrapper {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.notesListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: break-word;
+
+    margin-bottom: 15px;
+}
+
+.notesListItem:last-child {
+    margin-bottom: 0;
+}
+
+.completed .notesListItem-text {
+    color: #bababa!important;
+    text-decoration: line-through;
+}
+
+.notesListItem-text {
+    max-width: 470px;
+
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.noteComplete {
+    width: 20px;
+    height: 20px;
+    
+    background: transparent;
+    background-color: transparent;
+
+    border-radius: 100px;
+    
+    margin-right: 10px;
+}
+
+.noteComplete:hover {
+    cursor: pointer;
+}
+
+.deleteNote {
+    width: 40px;
+    height: 35px;
+
+    background-color: transparent;
+    font-size: 16px;
+    color: white;
+
+    border-radius: 100px;
+    transform: rotate(0deg);
+
+    transition: all .2s ease;
+}
+
+.deleteNote svg {
+    transition: all .2s;
+}
+
+.deleteNote:hover {
+    animation: deleteButtonAnimation 1s infinite linear;
+}
+
+.deleteNote:active {
+    opacity: 0.6;
+}
+
+.del {
+    animation: del 1s ease-in;
+
+    transition: .2s;
+}
+
+.deleteNote svg:active {
+    outline: black;
+}
+
+.notesSettings {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    background: linear-gradient(151.82deg, #DC50FF -8.12%, #DD3FA6 58.44%, #DB2F2F 105.99%);
+
+    z-index: 999px;
+}
+
+.notesSettings__wrapper {
+
+}
+
+.closeNotesSettings {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+
+    transition: all .3s ease;
+ }
+
+.closeNotesSettings:hover {
+    transform: rotate(-90deg);
+
+    cursor: pointer;
+}
+
+.closeNotesSettings:active {
+    opacity: 0.6;
+}
+
+.closeNotesSettings:before, .closeNotesSettings:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #fff;
+}
+
+.closeNotesSettings:before {
+    transform: rotate(45deg);
+}
+
+.closeNotesSettings:after {
+    transform: rotate(-45deg);
+}
+
+.notesSettings__wrapper {
+    position: absolute;
+    top: 120px;
+}
+
+.notesSettings__item {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.notesSettings__item:last-child {
+    margin-bottom: 0;
+}
+
+.notesSettings-global__text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.notesFilter {
+    display: flex;
+    align-items: center;
+}
+
+.notesSettingsSaveChanges {
+    width: 300px;
+    height: 60px;
+
+    position: absolute;
+    bottom: 50px;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background-color: rgb(20, 235, 20);
+
+    border-radius: 100px;
+
+    animation: notesSettingsSaveChangesButtonAnimation 2.5s infinite ease;
+    transition: all .3s ease;
+}
+
+.notesSettingsSaveChanges:hover {
+    color: rgb(223, 223, 223);
+    background-color: rgb(17, 191, 17);
+}
+
+.notesSettingsSaveChanges:active {
+    opacity: 0.6;
+}
+
+.noteSettingsPopup {
+    width: 500px;
+    height: 100px;
+
+    position: absolute;
+    top: -120px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 998;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background-color: rgb(20, 235, 20);
+    opacity: 0;
+
+    border-radius: 100px;
+
+    animation: noteSettingsPopupAnimation 3.5s ease;
+}
+
+.noteSettingsPopup_animation {
+    display: flex;
+    top: 20px;
+}
+
+.notesSettings-global__checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.notesSettings-global__checkbox:hover {
+    cursor: pointer;
+}
+
+@keyframes del {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes deleteButtonAnimation { 
+    0% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes deleteAllButtonAnimation {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    20% {
+        transform: translate(3px, -1px);
+    }
+
+    40% {
+        transform: translate(6px, -3px);
+    }
+
+    60% {
+        transform: translate(8px, -1px);
+    }
+
+    80% {
+        transform: translate(3px, -1px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes settingsButtonAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes notesSettingsSaveChangesButtonAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes noteSettingsPopupAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
